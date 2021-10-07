@@ -1,0 +1,62 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 3
+        versionName "1.1.1"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        android {
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13-beta-3'
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+    //support
+    api 'androidx.core:core:1.2.0-alpha02'
+    api 'androidx.appcompat:appcompat:1.1.0-beta01'
+
+    //RxAndroid
+    api 'io.reactivex.rxjava2:rxjava:2.2.10'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    //RxBus
+    api 'com.hwangjr.rxbus:rxbus:2.0.1'
+
+    //Retrofit
+    api 'com.squareup.retrofit2:retrofit:2.7.1'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.6.0'
+    api 'com.squareup.retrofit2:converter-scalars:2.6.0'
+    api 'androidx.recyclerview:recyclerview:1.0.0'
+
+    //J_SOUP
+    api 'org.jsoup:jsoup:1.12.1'
+    api 'cn.wanghaomiao:JsoupXpath:2.3.2'
+    api 'com.jayway.jsonpath:json-path:2.4.0'
+
+    //google
+    api 'com.google.android.material:material:1.1.0-alpha07'
+    api 'com.google.code.gson:gson:2.8.5'
+    api 'com.google.android:flexbox:1.1.0'
+
+    //butterknife
+    api 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+}

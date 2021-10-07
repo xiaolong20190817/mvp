@@ -1,0 +1,3 @@
+include ':basemvplib'
+include ':app'
+rootProject.name = "mvp"
