@@ -63,7 +63,7 @@ public class FunCommon {
 
     }
 
-    //获取主页
+    //获取主页 2023.02.03
     public  String GetUrlHome(String urlstr){
         try{
             String http_str;
@@ -75,6 +75,9 @@ public class FunCommon {
 
             URL url = new URL(urlstr);
             String urlPath = http_str + url.getHost();
+            if(url.getPort() > 0) {
+                urlPath = urlPath + ":" +  url.getPort();
+            }
             return urlPath;
         }catch(Exception e) {
             return "";
